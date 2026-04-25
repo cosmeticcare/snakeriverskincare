@@ -22,16 +22,146 @@
     <section class="hero-box">
         <h2>Place an Order</h2>
 
-        <p class="pro1details">
-            To place an order, please complete our order form. Once submitted,
-            we will contact you to confirm details and payment.
-        </p>
+       body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9irkPYuit_jfUHzEAdsqyR74KEmuY1-lSIKix-6a-nKdD-g/viewform?usp=header"
-           target="_blank"
-           class="order-button">
-           Place an Order
-        </a>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+    }
+
+    select, input {
+      padding: 5px;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    .venmo {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Place Your Order</h2>
+
+<table id="orderTable">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Size</th>
+      <th>Fragrance</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- Product Row -->
+    <tr>
+      <td>Foot Cream</td>
+      <td>
+        <select class="size" onchange="updateRow(this)">
+          <option value="8">Small ($8)</option>
+          <option value="12">Medium ($12)</option>
+          <option value="16">Large ($16)</option>
+        </select>
+      </td>
+      <td>
+        <select>
+          <option>Lavender</option>
+          <option>Peppermint</option>
+          <option>Unscented</option>
+        </select>
+      </td>
+      <td>
+        <input type="number" value="1" min="0" onchange="updateRow(this)">
+      </td>
+      <td class="subtotal">$8.00</td>
+    </tr>
+
+    <tr>
+      <td>Body Butter</td>
+      <td>
+        <select class="size" onchange="updateRow(this)">
+          <option value="10">Small ($10)</option>
+          <option value="15">Medium ($15)</option>
+          <option value="20">Large ($20)</option>
+        </select>
+      </td>
+      <td>
+        <select>
+          <option>Vanilla</option>
+          <option>Coconut</option>
+          <option>Unscented</option>
+        </select>
+      </td>
+      <td>
+        <input type="number" value="1" min="0" onchange="updateRow(this)">
+      </td>
+      <td class="subtotal">$10.00</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="total">
+  Total: $<span id="total">18.00</span>
+</div>
+
+<div class="venmo">
+  <h3>Pay with Venmo</h3>
+  <p>Scan the QR code below to complete your order:</p>
+  <img src="your-venmo-qr.png" alt="Venmo QR Code">
+</div>
+
+<script>
+function updateRow(element) {
+  let row = element.closest("tr");
+  let price = parseFloat(row.querySelector(".size").value);
+  let quantity = parseInt(row.querySelector("input").value) || 0;
+
+  let subtotal = price * quantity;
+  row.querySelector(".subtotal").innerText = "$" + subtotal.toFixed(2);
+
+  updateTotal();
+}
+
+function updateTotal() {
+  let subtotals = document.querySelectorAll(".subtotal");
+  let total = 0;
+
+  subtotals.forEach(cell => {
+    total += parseFloat(cell.innerText.replace("$", ""));
+  });
+
+  document.getElementById("total").innerText = total.toFixed(2);
+}
+
+// Initialize totals on page load
+document.querySelectorAll("tr").forEach(row => {
+  if (row.querySelector("input")) {
+    updateRow(row.querySelector("input"));
+  }
+});
+</script>
     </section>
 </main>
 
