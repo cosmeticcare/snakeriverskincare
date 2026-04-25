@@ -142,6 +142,92 @@ document.querySelectorAll("#orderTable tbody tr").forEach(row => {
   updateRow(row.querySelector("input"));
 });
 </script>
+<script>
+function printReceipt() {
+  let rows = document.querySelectorAll("#orderTable tbody tr");
+  let receiptRows = "";
 
+  rows.forEach(row => {
+    let product = row.children[0].innerText;
+    let sizeText = row.querySelector(".size").selectedOptions[0].text;
+    let fragrance = row.children[2].querySelector("select").value;
+    let quantity = parseInt(row.querySelector("input").value) || 0;
+    let subtotal = row.querySelector(".subtotal").innerText;
+
+    if (quantity > 0) {
+      receiptRows += `
+        <tr>
+          <td>${product}</td>
+          <td>${sizeText}</td>
+          <td>${fragrance}</td>
+          <td>${quantity}</td>
+          <td>${subtotal}</td>
+        </tr>
+      `;
+    }
+  });
+
+  let total = document.getElementById("total").innerText;
+
+  let receiptHTML = `
+    <html>
+    <head>
+      <title>Receipt</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+        }
+        h2 {
+          text-align: center;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+        th, td {
+          border-bottom: 1px solid #ccc;
+          padding: 10px;
+          text-align: left;
+        }
+        .total {
+          text-align: right;
+          margin-top: 20px;
+          font-size: 1.2em;
+          font-weight: bold;
+        }
+      </style>
+    </head>
+    <body>
+      <h2>Snake River Skincare Receipt</h2>
+      <p>Date: ${new Date().toLocaleString()}</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Size</th>
+            <th>Fragrance</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${receiptRows}
+        </tbody>
+      </table>
+
+      <div class="total">Total: $${total}</div>
+    </body>
+    </html>
+  `;
+
+  let printWindow = window.open('', '', 'width=800,height=600');
+  printWindow.document.write(receiptHTML);
+  printWindow.document.close();
+  printWindow.print();
+}
+</script>
 </body>
 </html>
