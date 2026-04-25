@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Order - Snake River Skincare</title>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
+
 <body>
+
 <header>
     <h1>Snake River Skincare</h1>
     <nav>
@@ -18,92 +21,85 @@
 
 <main class="order-container">
   <div class="order-card">
+
     <h2 class="order-title">Place Your Order</h2>
 
-    <table class="order-table">
-    <section class="hero-box">
-</head>
-<body>
+    <table class="order-table" id="orderTable">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Size</th>
+          <th>Fragrance</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
 
-<h2>Place Your Order</h2>
+      <tbody>
 
-<table id="orderTable">
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Size</th>
-      <th>Fragrance</th>
-      <th>Quantity</th>
-      <th>Subtotal</th>
-    </tr>
-  </thead>
-  <tbody>
+        <tr>
+          <td>Foot Cream</td>
+          <td>
+            <select class="size" onchange="updateRow(this)">
+              <option value="8">Small ($8)</option>
+              <option value="12">Medium ($12)</option>
+              <option value="16">Large ($16)</option>
+            </select>
+          </td>
+          <td>
+            <select>
+              <option>Lavender</option>
+              <option>Peppermint</option>
+              <option>Unscented</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" value="1" min="0" onchange="updateRow(this)">
+          </td>
+          <td class="subtotal">$8.00</td>
+        </tr>
 
-    <!-- Product Row -->
-    <tr>
-      <td>Foot Cream</td>
-      <td>
-        <select class="size" onchange="updateRow(this)">
-          <option value="8">Small ($8)</option>
-          <option value="12">Medium ($12)</option>
-          <option value="16">Large ($16)</option>
-        </select>
-      </td>
-      <td>
-        <select>
-          <option>Lavender</option>
-          <option>Peppermint</option>
-          <option>Unscented</option>
-        </select>
-      </td>
-      <td>
-        <input type="number" value="1" min="0" onchange="updateRow(this)">
-      </td>
-      <td class="subtotal">$8.00</td>
-    </tr>
+        <tr>
+          <td>Body Butter</td>
+          <td>
+            <select class="size" onchange="updateRow(this)">
+              <option value="10">Small ($10)</option>
+              <option value="15">Medium ($15)</option>
+              <option value="20">Large ($20)</option>
+            </select>
+          </td>
+          <td>
+            <select>
+              <option>Vanilla</option>
+              <option>Coconut</option>
+              <option>Unscented</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" value="1" min="0" onchange="updateRow(this)">
+          </td>
+          <td class="subtotal">$10.00</td>
+        </tr>
 
-    <tr>
-      <td>Body Butter</td>
-      <td>
-        <select class="size" onchange="updateRow(this)">
-          <option value="10">Small ($10)</option>
-          <option value="15">Medium ($15)</option>
-          <option value="20">Large ($20)</option>
-        </select>
-      </td>
-      <td>
-        <select>
-          <option>Vanilla</option>
-          <option>Coconut</option>
-          <option>Unscented</option>
-        </select>
-      </td>
-      <td>
-        <input type="number" value="1" min="0" onchange="updateRow(this)">
-      </td>
-      <td class="subtotal">$10.00</td>
-    </tr>
+      </tbody>
+    </table>
 
-  </tbody>
-</table>
-<div class="order-total">
-  Total: $<span id="total">0.00</span>
-</div>
+    <div class="order-total">
+      Total: $<span id="total">0.00</span>
+    </div>
 
-<div class="venmo-section">
-  <h3>Pay with Venmo</h3>
-  <p>Scan to complete your order</p>
-  <img src="your-venmo-qr.png">
-</div>
-<div class="total">
-  Total: $<span id="total">18.00</span>
-</div>
+    <div class="venmo-section">
+      <h3>Pay with Venmo</h3>
+      <p>Scan to complete your order</p>
+      <img src="your-venmo-qr.png" alt="Venmo QR Code">
+    </div>
 
-<div class="venmo">
-  <h3>Pay with Venmo</h3>
-  <p>Scan the QR code below to complete your order:</p>
-  <img src="your-venmo-qr.png" alt="Venmo QR Code">
-</div>
+  </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Snake River Skincare. All rights reserved.</p>
+</footer>
 
 <script>
 function updateRow(element) {
@@ -128,19 +124,11 @@ function updateTotal() {
   document.getElementById("total").innerText = total.toFixed(2);
 }
 
-// Initialize totals on page load
-document.querySelectorAll("tr").forEach(row => {
-  if (row.querySelector("input")) {
-    updateRow(row.querySelector("input"));
-  }
+// Initialize totals
+document.querySelectorAll("#orderTable tbody tr").forEach(row => {
+  updateRow(row.querySelector("input"));
 });
 </script>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2025 Snake River Skincare. All rights reserved.</p>
-</footer>
 
 </body>
 </html>
