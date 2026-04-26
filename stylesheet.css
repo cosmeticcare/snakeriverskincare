@@ -347,7 +347,7 @@ footer {
 /* QR CODE */
 .venmo-content img {
     width: 180px;
-    height: 300;
+    height: 180;
     flex-shrink: 0;
     border-radius: 10px;
 }
@@ -355,7 +355,7 @@ footer {
 /* TEXT BLOCK */
 .venmo-text {
     text-align: left;
-    max-width: 500px;
+    max-width: 300px;
 }
 
 /* Paragraph styling */
