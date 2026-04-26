@@ -388,14 +388,4 @@ footer {
     text-align: left;
     max-width: 250px;
 }
-/* Mobile fallback */
-@media (max-width: 600px) {
-    .venmo-content {
-        flex-direction: column !important;
-        text-align: center;
-    }
 
-    .venmo-text {
-        text-align: center;
-    }
-}
