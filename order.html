@@ -1,321 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Order - Snake River Skincare</title>
-    <link rel="stylesheet" href="stylesheet.css">
+<meta charset="UTF-8">
+<title>Order - Snake River Skincare</title>
+<link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Snake River Skincare</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="order.html">Order</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+  <h1>Snake River Skincare</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
 <main class="order-container">
-  <div class="order-card">
+<div class="order-card">
 
-    <h2 class="order-title">Place Your Order</h2>
+<h2 class="order-title">Place Your Order</h2>
 
-    <table class="order-table" id="orderTable">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Size</th>
-          <th>Fragrance</th>
-          <th>Quantity</th>
-          <th>Subtotal</th>
-        </tr>
-      </thead>
+<table class="order-table" id="orderTable">
+<thead>
+<tr>
+<th>Product</th>
+<th>Size</th>
+<th>Fragrance</th>
+<th>Quantity</th>
+<th>Subtotal</th>
+</tr>
+</thead>
 
-      <tbody>
+<tbody>
 
-        <tr>
-          <td>Foot Cream</td>
-          <td>
-            <select class="size" onchange="updateRow(this)">
-              <option value="15.99">4 oz ($15.99)</option>
-              <option value="24.99">8 oz ($24.99)</option>
-            </select>
-          </td>
-          <td>
-            <select>
-              <option>Unscented</option>
-            </select>
-          </td>
-          <td>
-            <input type="number" value="0" min="0" onchange="updateRow(this)">
-          </td>
-          <td class="subtotal">$0.00</td>
-        </tr>
+<tr>
+<td>Foot Cream</td>
+<td>
+<select class="size" onchange="updateRow(this)">
+<option value="15.99">4 oz ($15.99)</option>
+<option value="24.99">8 oz ($24.99)</option>
+</select>
+</td>
+<td><select><option>Unscented</option></select></td>
+<td><input type="number" value="0" min="0" onchange="updateRow(this)"></td>
+<td class="subtotal">$0.00</td>
+</tr>
 
-        <tr>
-          <td>Body Butter</td>
-          <td>
-            <select class="size" onchange="updateRow(this)">
-              <option value="14.99">4 oz ($14.99)</option>
-              <option value="19.99">8 oz ($19.99)</option>
-            </select>
-          </td>
-          <td>
-            <select>
-              <option>Unscented</option>
-              <option>Sandal Wood</option>
-              <option>Vanilla</option>
-              <option>Lavender</option>
-              <option>Rose</option>
-              <option>Sweet Tobacco</option>
-              <option>Cinnamon Bear</option>
-            </select>
-          </td>
-          <td>
-            <input type="number" value="0" min="0" onchange="updateRow(this)">
-          </td>
-          <td class="subtotal">$0.00</td>
-        </tr>
+<tr>
+<td>Body Butter</td>
+<td>
+<select class="size" onchange="updateRow(this)">
+<option value="14.99">4 oz ($14.99)</option>
+<option value="19.99">8 oz ($19.99)</option>
+</select>
+</td>
+<td>
+<select>
+<option>Unscented</option>
+<option>Sandal Wood</option>
+<option>Vanilla</option>
+<option>Lavender</option>
+<option>Rose</option>
+<option>Sweet Tobacco</option>
+<option>Cinnamon Bear</option>
+</select>
+</td>
+<td><input type="number" value="0" min="0" onchange="updateRow(this)"></td>
+<td class="subtotal">$0.00</td>
+</tr>
 
-        <tr>
-          <td>Release Massage Cream</td>
-          <td>
-            <select class="size" onchange="updateRow(this)">
-              <option value="16.99">4 oz ($16.99)</option>
-              <option value="24.99">8 oz ($24.99)</option>
-            </select>
-          </td>
-          <td>
-            <select>
-              <option>Unscented</option>
-            </select>
-          </td>
-          <td>
-            <input type="number" value="0" min="0" onchange="updateRow(this)">
-          </td>
-          <td class="subtotal">$0.00</td>
-        </tr>
+<tr>
+<td>Release Massage Cream</td>
+<td>
+<select class="size" onchange="updateRow(this)">
+<option value="16.99">4 oz ($16.99)</option>
+<option value="24.99">8 oz ($24.99)</option>
+</select>
+</td>
+<td><select><option>Unscented</option></select></td>
+<td><input type="number" value="0" min="0" onchange="updateRow(this)"></td>
+<td class="subtotal">$0.00</td>
+</tr>
 
-        <tr>
-          <td>Niacinamide Face Serum</td>
-          <td>
-            <select class="size" onchange="updateRow(this)">
-              <option value="14.99">1 oz ($14.99)</option>
-            </select>
-          </td>
-          <td>
-            <select>
-              <option>Unscented</option>
-            </select>
-          </td>
-          <td>
-            <input type="number" value="0" min="0" onchange="updateRow(this)">
-          </td>
-          <td class="subtotal">$0.00</td>
-        </tr>
+<tr>
+<td>Niacinamide Face Serum</td>
+<td>
+<select class="size" onchange="updateRow(this)">
+<option value="14.99">1 oz ($14.99)</option>
+</select>
+</td>
+<td><select><option>Unscented</option></select></td>
+<td><input type="number" value="0" min="0" onchange="updateRow(this)"></td>
+<td class="subtotal">$0.00</td>
+</tr>
 
-        <tr>
-          <td>Hyaluronic Acid Serum</td>
-          <td>
-            <select class="size" onchange="updateRow(this)">
-              <option value="14.99">1 oz ($14.99)</option>
-            </select>
-          </td>
-          <td>
-            <select>
-              <option>Unscented</option>
-            </select>
-          </td>
-          <td>
-            <input type="number" value="0" min="0" onchange="updateRow(this)">
-          </td>
-          <td class="subtotal">$0.00</td>
-        </tr>
+<tr>
+<td>Hyaluronic Acid Serum</td>
+<td>
+<select class="size" onchange="updateRow(this)">
+<option value="14.99">1 oz ($14.99)</option>
+</select>
+</td>
+<td><select><option>Unscented</option></select></td>
+<td><input type="number" value="0" min="0" onchange="updateRow(this)"></td>
+<td class="subtotal">$0.00</td>
+</tr>
 
-      </tbody>
-    </table>
+</tbody>
+</table>
 
-      
-    <div class="order-total">
-      Total: $<span id="total">0.00</span>
-    </div>
-
-<div class="shipping-line" id="shippingLine" style="display: none;">
-  Shipping & Handling: $6.20
+<!-- SHIPPING -->
+<div class="shipping-line" id="shippingLine" style="display:none;">
+Shipping & Handling: $6.20
 </div>
 
+<!-- TOTAL -->
 <div class="order-total">
-  Total: $<span id="total">0.00</span>
+Total: $<span id="total">0.00</span>
 </div>
 
+<button class="order-button" onclick="printReceipt()">Print Receipt</button>
 
-      
-    <button class="order-button" onclick="printReceipt()">Print Receipt</button>
+<!-- VENMO -->
+<div class="venmo-section">
+<h3>Pay with Venmo</h3>
 
-    <!-- VENMO SECTION -->
-    <div class="venmo-section">
-      <h3>Pay with Venmo</h3>
+<div class="venmo-content">
 
-      <div class="venmo-content">
+<img src="Venmo.jpg" alt="Venmo QR Code">
 
-        <img src="Venmo.jpg" alt="Venmo QR Code">
+<div class="venmo-text">
+<p><strong>Instructions:</strong></p>
+<p>1. Scan the QR code</p>
+<p>2. Enter your total</p>
+<p>3. Include your name in the note and receipt</p>
 
-        <div class="venmo-text">
-          <p><strong>Instructions:</strong></p>
-          <p>1. Scan the QR code</p>
-          <p>2. Enter your total</p>
-          <p>3. Include your name in the note and receipt</p>
+<p>
+*Please include your receipt in Venmo or email it to
+<a href="mailto:snakeriverskincare@gmail.com">
+snakeriverskincare@gmail.com
+</a>
+</p>
 
-          <p>
-            *Please note your order will be difficult to track if your receipt is not included in the venmo description and emailed to
-            <a href="mailto:snakeriverskincare@gmail.com">
-              snakeriverskincare@gmail.com
-            </a>
-          </p>
+<p>4. Submit your order</p>
 
-          <p>4. Submit your order</p>
+<p>
+5. Email your shipping address and receipt to
+<a href="mailto:snakeriverskincare@gmail.com">
+snakeriverskincare@gmail.com
+</a>
+</p>
 
-          <p>
-            5. Email
-            <a href="mailto:snakeriverskincare@gmail.com">
-              snakeriverskincare@gmail.com
-            </a>
-            with your shipping address and receipt
-          </p>
-        </p>*Clicking the Print Receipt button will open your recipt in a new window that will be easy to copy and paste!</p>
-        </div>
+<p>
+*Clicking "Print Receipt" opens a copyable receipt
+</p>
 
-      </div>
-    </div>
+</div>
+</div>
+</div>
 
-  </div>
+</div>
 </main>
 
 <footer>
-    <p>&copy; 2026 Snake River Skincare. All rights reserved.</p>
+<p>&copy; 2026 Snake River Skincare. All rights reserved.</p>
 </footer>
 
-
 <script>
-function updateRow(element) {
-  let row = element.closest("tr");
+function updateRow(el) {
+let row = el.closest("tr");
+let price = parseFloat(row.querySelector(".size").value) || 0;
+let qty = parseInt(row.querySelector("input").value) || 0;
 
-  let price = parseFloat(row.querySelector(".size").value) || 0;
-  let quantity = parseInt(row.querySelector("input").value) || 0;
+let subtotal = price * qty;
+row.querySelector(".subtotal").innerText = "$" + subtotal.toFixed(2);
 
-  let subtotal = price * quantity;
-  row.querySelector(".subtotal").innerText = "$" + subtotal.toFixed(2);
-
-  updateTotal();
+updateTotal();
 }
 
 function updateTotal() {
-  let rows = document.querySelectorAll("#orderTable tbody tr");
-  let subtotalTotal = 0;
-  let hasItems = false;
+let rows = document.querySelectorAll("#orderTable tbody tr");
+let subtotal = 0;
+let hasItems = false;
 
-  rows.forEach(row => {
-    let subtotalCell = row.querySelector(".subtotal");
-    let quantity = parseInt(row.querySelector("input").value) || 0;
+rows.forEach(row => {
+let qty = parseInt(row.querySelector("input").value) || 0;
+let value = parseFloat(row.querySelector(".subtotal").innerText.replace("$","")) || 0;
 
-    if (quantity > 0) hasItems = true;
+if (qty > 0) hasItems = true;
+subtotal += value;
+});
 
-    if (subtotalCell) {
-      let value = parseFloat(subtotalCell.innerText.replace("$", "")) || 0;
-      subtotalTotal += value;
-    }
-  });
+let shipping = hasItems ? 6.20 : 0;
 
-  let shipping = hasItems ? 6.20 : 0;
+document.getElementById("shippingLine").style.display = hasItems ? "block" : "none";
 
-  // Show / hide shipping line
-  document.getElementById("shippingLine").style.display = hasItems ? "block" : "none";
-
-  let finalTotal = subtotalTotal + shipping;
-
-  document.getElementById("total").innerText = finalTotal.toFixed(2);
+let total = subtotal + shipping;
+document.getElementById("total").innerText = total.toFixed(2);
 }
 
 function initializeTable() {
-  document.querySelectorAll("#orderTable tbody tr").forEach(row => {
-    let input = row.querySelector("input");
-    if (input) updateRow(input);
-  });
+document.querySelectorAll("#orderTable tbody tr").forEach(row => {
+updateRow(row.querySelector("input"));
+});
 }
 
-/* PRINT RECEIPT */
 function printReceipt() {
-  let rows = document.querySelectorAll("#orderTable tbody tr");
-  let receiptRows = "";
-  let hasItems = false;
+let rows = document.querySelectorAll("#orderTable tbody tr");
+let html = "";
+let hasItems = false;
 
-  rows.forEach(row => {
-    let product = row.children[0].innerText;
-    let size = row.querySelector(".size").selectedOptions[0].text;
-    let quantity = parseInt(row.querySelector("input").value) || 0;
-    let subtotal = row.querySelector(".subtotal").innerText;
+rows.forEach(row => {
+let qty = parseInt(row.querySelector("input").value) || 0;
+if (qty > 0) {
+hasItems = true;
 
-    if (quantity > 0) {
-      hasItems = true;
+html += `
+<tr>
+<td>${row.children[0].innerText}</td>
+<td>${row.querySelector(".size").selectedOptions[0].text}</td>
+<td>${qty}</td>
+<td>${row.querySelector(".subtotal").innerText}</td>
+</tr>
+`;
+}
+});
 
-      receiptRows += `
-        <tr>
-          <td>${product}</td>
-          <td>${size}</td>
-          <td>${quantity}</td>
-          <td>${subtotal}</td>
-        </tr>
-      `;
-    }
-  });
+if (!hasItems) {
+alert("Add items first.");
+return;
+}
 
-  if (!hasItems) {
-    alert("Please add items before printing.");
-    return;
-  }
+let total = document.getElementById("total").innerText;
 
-  let total = document.getElementById("total").innerText;
+let w = window.open("", "", "width=800,height=600");
+w.document.write(`
+<html>
+<body style="font-family:Arial;padding:20px;">
+<h2>Snake River Skincare</h2>
+<p>${new Date().toLocaleString()}</p>
 
-  let win = window.open("", "", "width=800,height=600");
-  win.document.write(`
-    <html>
-    <head>
-      <title>Receipt</title>
-      <style>
-        body { font-family: Arial; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        td, th { padding: 8px; border-bottom: 1px solid #ccc; }
-        .total { text-align: right; font-weight: bold; margin-top: 20px; }
-      </style>
-    </head>
-    <body>
-      <h2>Snake River Skincare</h2>
-      <p>${new Date().toLocaleString()}</p>
+<table style="width:100%;border-collapse:collapse;">
+<tr><th>Product</th><th>Size</th><th>Qty</th><th>Subtotal</th></tr>
+${html}
+</table>
 
-      <table>
-        <tr>
-          <th>Product</th>
-          <th>Size</th>
-          <th>Qty</th>
-          <th>Subtotal</th>
-        </tr>
-        ${receiptRows}
-      </table>
-
-      <div class="total">Total: $${total}</div>
-    </body>
-    </html>
-  `);
-
-  win.document.close();
-  win.onload = () => win.print();
+<h3 style="text-align:right;">Total: $${total}</h3>
+</body>
+</html>
+`);
+w.document.close();
+w.print();
 }
 
 window.onload = initializeTable;
 </script>
+
 </body>
 </html>
